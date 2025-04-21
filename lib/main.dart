@@ -1,7 +1,9 @@
+import 'package:ar_object_flutter_app/screens/dashboard_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_3d_controller/flutter_3d_controller.dart';
 
 void main() {
+  WidgetsFlutterBinding.ensureInitialized();
   runApp(const MyApp());
 }
 
@@ -147,6 +149,16 @@ class _MyHomePageState extends State<MyHomePage> {
               //controller.resetCameraTarget();
             },
             icon: const Icon(Icons.cameraswitch_outlined),
+          ),
+          IconButton(
+            onPressed: () {
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const DashboardScreen(),
+                  ));
+            },
+            icon: const Icon(Icons.arrow_forward),
           ),
         ],
       ),

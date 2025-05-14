@@ -154,25 +154,23 @@ class _MyHomePageState extends State<MyHomePage> {
             icon: const Icon(Icons.cameraswitch_outlined),
           ),
           IconButton(
-            onPressed: () {
-              if (Platform.isAndroid) {
-                //TODO crashing app in android
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                      builder: (context) => const ARViewAndroidScreen()),
-                );
-              } else if (Platform.isIOS) {
-                //TODO pending check ios demo
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                      builder: (context) => const ARViewIosScreen()),
-                );
-              }
-            },
-            icon: const Icon(Icons.arrow_forward),
-          )
+  onPressed: () {
+    if (Platform.isAndroid) {
+      //TODO crashing app in android
+      Navigator.push(
+        context,
+        MaterialPageRoute(builder: (context) => const ARViewAndroidScreen()),
+      );
+    } else if (Platform.isIOS) {
+      //TODO pending check ios demo
+      Navigator.push(
+        context,
+        MaterialPageRoute(builder: (context) => const ARViewIosScreen()),
+      );
+    }
+  },
+  icon: const Icon(Icons.arrow_forward),
+)
         ],
       ),
     );

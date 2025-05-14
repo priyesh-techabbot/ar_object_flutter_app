@@ -32,8 +32,12 @@ dependencies:
     sdk: flutter
 
   flutter_3d_controller: 2.0.3
-  ar_flutter_plugin_2:
-  vector_math: ^2.1.4    
+  arcore_flutter_plugin: ^0.1.0 
+  vector_math: ^2.1.4
+  arkit_plugin: ^1.1.2
+  flutter_cube: ^0.1.1
+  camera: ^0.11.0+2
+  ar_flutter_plugin_2: ^0.0.3
 
 dev_dependencies:
   flutter_test:
@@ -60,10 +64,6 @@ flutter:
   # To add assets to your application, add an assets section, like this:
   assets:
     - assets/
-    - assets/images/
-    - assets/black_myth.glb
-    - assets/black_rat.glb
-    - assets/Chicken_01/
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/to/resolution-aware-images

@@ -1,4 +1,7 @@
-import 'package:ar_object_flutter_app/screens/dashboard_screen.dart';
+import 'dart:io';
+
+import 'package:ar_object_flutter_app/screens/ar_view_ios_screen.dart';
+import 'package:ar_object_flutter_app/screens/ar_view_android_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_3d_controller/flutter_3d_controller.dart';
 
@@ -67,7 +70,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
         //You can have full control of 3d model animations, textures and camera
         controller: controller,
-        src: 'assets/black_myth.glb', //3D model with different animations
+        src: 'assets/black_rat.glb', //3D model with different animations
         //src: 'assets/sheen_chair.glb', //3D model with different textures
         //src: 'https://modelviewer.dev/shared-assets/models/Astronaut.glb', // 3D model from URL
       ),
@@ -152,14 +155,24 @@ class _MyHomePageState extends State<MyHomePage> {
           ),
           IconButton(
             onPressed: () {
-              Navigator.push(
+              if (Platform.isAndroid) {
+                //TODO crashing app in android
+                Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => const DashboardScreen(),
-                  ));
+                      builder: (context) => const ARViewAndroidScreen()),
+                );
+              } else if (Platform.isIOS) {
+                //TODO pending check ios demo
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => const ARViewIosScreen()),
+                );
+              }
             },
             icon: const Icon(Icons.arrow_forward),
-          ),
+          )
         ],
       ),
     );
